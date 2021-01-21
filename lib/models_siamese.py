@@ -721,7 +721,7 @@ class siamese_cgcnn_cor(cgcnn):
         x = tf.expand_dims(x0, 0)  # 1 x M x Fin*N
         def concat(x, x_):
             x_ = tf.expand_dims(x_, 0)  # 1 x M x Fin*N
-            return tf.concat(0, [x, x_])  # K x M x Fin*N
+            return tf.concat([x, x_],0)  # K x M x Fin*N
         if K > 1:
             x1 = tf.sparse_tensor_dense_matmul(L, x0)
             x = concat(x, x1)
@@ -780,7 +780,7 @@ class siamese_cgcnn_cor(cgcnn):
         x = tf.reshape(x, [int(N), int(M*F)])
 
         site = tf.expand_dims(site, axis=1)
-        x = tf.concat(1, [x, site])
+        x = tf.concat([x, site],1)
 
         for i, M in enumerate(self.M[:-1]):
             with tf.variable_scope('fc{}'.format(i + 1)):

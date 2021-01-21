@@ -17,13 +17,13 @@ import csv
 import numpy as np
 import scipy.io as sio
 
-from sklearn.covariance import GraphLassoCV
+from sklearn.covariance import GraphicalLassoCV
 import nilearn
 from nilearn import connectome
 
 
 # Output path
-save_path = '/vol/dhcp-hcp-data/ABIDE'
+save_path = './'
 
 # Number of subjects
 num_subjects = 1000

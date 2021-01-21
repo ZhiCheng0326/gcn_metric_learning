@@ -42,10 +42,20 @@ The implementaton of the global loss function is based on:
 
 2. Install the dependencies. Please edit `requirements.txt` to choose the
    TensorFlow version (CPU / GPU, Linux / Mac) you want to install, or install
-   it beforehand.
+   it beforehand. (This code runs on tensorflow 1.x)
    ```sh
    pip install -r requirements.txt  # or make install
    ```
+3. To download ABIDE datasets, obtain missing `subject_IDs.txt` and `mat` file, by using script from [parisots](https://github.com/parisots/population-gcn), run code below:
+```sh
+python fetch_data.py
+```
+
+4. Run the code
+```sh
+python main_all_sites.py
+```
+
 
 ## Using the model
 
@@ -53,7 +63,7 @@ To use our siamese graph ConvNet on your data, you need:
 
 1. pairs of graphs as matrices where each row is a node and each column is a node feature,
 2. a class label for each graph,
-3. an adjacency matrix which provides the structure as a graph; the same structure 
+3. an adjacency matrix which provides the structure as a graph; the same structure
    will be used for all samples.
 
 Please get in touch if you are unsure about applying the model to a different
