@@ -33,10 +33,12 @@ The implementaton of the global loss function is based on:
   IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2016.
 
 ## Installation
+### Run from Google Colab
+Open `gcn_metric_learning.ipynb` and run all
 
-1. Clone this repository.
+### Run in other environments
+1. Clone this repository. Then:
    ```sh
-   git clone https://github.com/sk1712/gcn_metric_learning
    cd gcn_metric_learning
    ```
 
@@ -46,15 +48,18 @@ The implementaton of the global loss function is based on:
    ```sh
    pip install -r requirements.txt  # or make install
    ```
-3. To download ABIDE datasets, obtain missing `subject_IDs.txt` and `mat` file, by using script from [parisots](https://github.com/parisots/population-gcn), run code below:
-```sh
-python fetch_data.py
-```
+3. The root folder in fetch_data.py (line 27) and ABIDEParser.py (line 33) has to be updated to the folder were the data will be stored.
 
-4. Run the code
-```sh
-python main_all_sites.py
-```
+4. To download ABIDE datasets, obtain missing `subject_IDs.txt` and `mat` file,
+   by using script from [parisots](https://github.com/parisots/population-gcn), run code below:
+   ```sh
+   python fetch_data.py
+   ```
+
+5. Run the code
+   ```sh
+   python main_all_sites.py
+   ```
 
 
 ## Using the model

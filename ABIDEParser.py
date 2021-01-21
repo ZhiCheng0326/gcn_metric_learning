@@ -30,7 +30,7 @@ from nilearn import connectome
 pipeline = 'cpac'
 
 # Input data variables
-root_folder = './'
+root_folder = '/content/gcn_metric_learning' ## modified this directory
 data_folder = os.path.join(root_folder, 'ABIDE_pcp/cpac/filt_noglobal')
 phenotype = os.path.join(root_folder, 'ABIDE_pcp/Phenotypic_V1_0b_preprocessed1.csv')
 
